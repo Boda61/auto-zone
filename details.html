@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Details - AUTO ZONE</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./image_cars/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./image_cars/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./image_cars/favicon-16x16.png">
+    <link rel="manifest" href="./image_cars/site.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="details.css">
+</head>
+<body>
+
+<!-- ===== Alert Bar ===== -->
+<div class="alert alert-danger text-center m-0 fw-bold">
+!!!الموقع غير مسؤل عن اي عربيات غير موثوق بها
+</div>
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">AUTO ZONE</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active text-danger fw-semibold" href="Home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="content.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="add.html">Add Ad</a></li>
+        <li class="nav-item ms-lg-3">
+            <button onclick="window.location.href='signup.html'" class="btn btn-outline-danger rounded-5 px-4">
+              Sign Up
+            </button>
+          </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Header ===== -->
+<section class="car-header text-center py-4 bg-light">
+  <h1 id="carName">Car Name</h1>
+  <p id="carSubtitle">Model details will appear here</p>
+</section>
+
+<!-- ===== Main Content ===== -->
+<section class="container py-5">
+  <div class="row g-4">
+    <!-- Slider Column -->
+    <div class="col-lg-7">
+      <div id="carCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carImages"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+<!-- Details Column -->
+<div class="col-lg-5">
+  <div class="details-box">
+
+    <!-- زرارين التبديل -->
+<div class="toggle-tabs mb-4">
+  <button id="btnSpecs" class="tab-btn active">
+    <i class="bi bi-list-check"></i> Specifications
+  </button>
+  <button id="btnDesc" class="tab-btn">
+    <i class="bi bi-file-text"></i> Description
+  </button>
+</div>
+
+
+    <!-- المحتوى: Specifications -->
+    <div id="specsContent">
+      <h3 class="fw-bold mb-3">Car Specifications</h3>
+      <ul class="list-group mb-3" id="carSpecs"></ul>
+      <p class="price-tag text-danger fs-4" id="carPrice">Price: $0</p>
+    </div>
+
+    <!-- المحتوى: Description (مخفي في البداية) -->
+<div id="descContent" style="display:none;">
+  <h3 class="fw-bold mb-3">Car Description</h3>
+  <p id="carDescription" class="text-secondary">
+    No description available for this car.
+  </p>
+</div>
+
+    <button class="btn btn-danger w-100 mt-2" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Seller</button>
+    <a href="Home.html" class="btn btn-outline-secondary w-100 mt-3">⬅ Back to Home</a>
+
+  </div>
+</div>
+
+
+</section>
+
+
+<!-- ===== Contact Modal ===== -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="contactModalLabel">Contact Seller</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="contactForm">
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Your Phone</label>
+            <input type="phone" class="form-control" id="phone" placeholder="Enter your phone number" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Message</label>
+            <textarea class="form-control" id="message" rows="3" placeholder="Write your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-danger w-100">Send Message</button>
+        </form>
+
+        <hr class="my-4">
+
+        <!-- زر الاتصال بالبائع -->
+        <div class="text-center">
+          <p class="fw-semibold mb-3">أو يمكنك التواصل مباشرة مع البائع عبر الهاتف:</p>
+          <a href="tel:01012345678" class="btn btn-success w-100 fs-5 mb-2 rounded-5">
+            📞 اتصل بالبائع
+          </a>
+          <button class="btn btn-outline-secondary w-100" onclick="copyPhone()">
+            📋 نسخ رقم الهاتف
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/201128420011" target="_blank" id="whatsappBtn">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- About -->
+    <div class="footer-section">
+      <h3>About AUTO ZONE</h3>
+      <p>A trusted platform for buying and selling used cars easily and safely.</p>
+      <img src="./image_cars/logo.png" alt="AUTO ZONE Logo" class="footer-logo">
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="add.html">Add Ad</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-section">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Warranty Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Social & Newsletter -->
+    <div class="footer-section">
+      <h3>Follow & Subscribe</h3>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+<hr>
+  <div class="footer-bottom">
+    <p>© 2025 AUTO ZONE. All Rights Reserved. | <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUxYk25rvBPCIW5I16mkXiZbrNSPNw18FvOlU_GOjqC6aX0g/viewform?usp=header">Feedback</a></p>
+  </div>
+</footer>
+<script>
+  // === Handle Form Submission ===
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("✅ تم ارسال رسالتك الى البائع بنجاح!");
+    const modal = bootstrap.Modal.getInstance(document.getElementById("contactModal"));
+    modal.hide();
+    this.reset();
+  });
+
+  // === Cars Data with Images, Specs, Description ===
+  const cars = {
+    toyota: {
+      name: "Toyota",
+      subtitle: "Reliable Sedan | Automatic | Petrol",
+      price: "EGP780,000",
+      images: [
+        "image_cars/toyota/صور التيوتيا (1).jpg",
+        "image_cars/toyota/صور التيوتيا (2).jpg",
+        "image_cars/toyota/صور التيوتيا (3).jpg",
+        "image_cars/toyota/صور التيوتيا (4).jpg",
+        "image_cars/toyota/صور التيوتيا (5).jpg",
+        "image_cars/toyota/صور التيوتيا (6).jpg"
+      ],
+      specs: [
+        ["Brand", "Toyota"],
+        ["Model", "Corolla 2014"],
+        ["Engine", "1.8L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "0 km"]
+      ],
+      description: "تويوتا كرولا ٢٠١٤ فبريكا بره وجوه اعلي فئه."
+    },
+    kia: {
+      name: "Kia",
+      subtitle: "Compact Car | Automatic | Petrol",
+      price: "EGP490,000",
+      images: [
+        "image_cars/kia/صور كيا (1).jpg",
+        "image_cars/kia/صور كيا (3).jpg",
+        "image_cars/kia/صور كيا (4).jpg",
+        "image_cars/kia/صور كيا (5).jpg",
+        "image_cars/kia/صور كيا (6).jpg"
+      ],
+      specs: [
+        ["Brand", "Kia"],
+        ["Model", "Kia Cerato 2010"],
+        ["Engine", "1.4L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "5,000 km"]
+      ],
+      description: "كيا سيراتو ٢٠١٠ اعلي فئه مفتاح رشه بره ماعدا السقف."
+    },
+    bmw: {
+      name: "BMW X3",
+      subtitle: "Luxury SUV | Automatic | Petrol",
+      price: "EGP1,350,000",
+      images: [
+        "image_cars/BMWx3/BMWx3 (1).jpg",
+        "image_cars/BMWx3/BMWx3 (2).jpg",
+        "image_cars/BMWx3/BMWx3 (3).jpg",
+        "image_cars/BMWx3/BMWx3 (4).jpg",
+        "image_cars/BMWx3/BMWx3 (5).jpg",
+        "image_cars/BMWx3/BMWx3 (6).jpg",
+        "image_cars/BMWx3/BMWx3 (7).jpg",
+        "image_cars/BMWx3/BMWx3 (8).jpg"
+      ],
+      specs: [
+        ["Brand", "BMW"],
+        ["Model", "X3 2024"],
+        ["Engine", "2.0L Turbo"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "0 km"]
+      ],
+      description: "BMW X3 | 2024 | Xdrive 35i | 217,000 KM | 3000 CC | رخصة سنة وشهرين | راشة برا كله ما عدا الشنطة | السعر 1,000,000 | مكان المعاينة الشروق"
+    },
+    hyundai: {
+      name: "Hyundai Getz",
+      subtitle: "Hatchback | Automatic | Petrol",
+      price: "EGP440,000",
+      images: [
+        "image_cars/Hyundai Getz/Hyundai Getz (1).jpg",
+        "image_cars/Hyundai Getz/Hyundai Getz (2).jpg",
+        "image_cars/Hyundai Getz/Hyundai Getz (3).jpg",
+        "image_cars/Hyundai Getz/Hyundai Getz (4).jpg",
+        "image_cars/Hyundai Getz/Hyundai Getz (5).jpg",
+        "image_cars/Hyundai Getz/Hyundai Getz (6).jpg"
+      ],
+      specs: [
+        ["Brand", "Hyundai"],
+        ["Model", "Getz 2011"],
+        ["Engine", "1.4L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "10,000 km"]
+      ],
+      description: "هيوانداي جينز ٢٠١١ فبريكا كلها أوتوماتيك."
+    },
+    hyundai_veloster: {
+      name: "Hyundai Veloster",
+      subtitle: "Sporty Coupe | Automatic | Petrol",
+      price: "EGP550,000",
+      images: [
+        "image_cars/Hyundai Veloster/Hyundai Veloster (1).jpg",
+        "image_cars/Hyundai Veloster/Hyundai Veloster (2).jpg",
+        "image_cars/Hyundai Veloster/Hyundai Veloster (3).jpg",
+        "image_cars/Hyundai Veloster/Hyundai Veloster (4).jpg",
+        "image_cars/Hyundai Veloster/Hyundai Veloster (5).jpg",
+        "image_cars/Hyundai Veloster/Hyundai Veloster (6).jpg"
+      ],
+      specs: [
+        ["Brand", "Hyundai"],
+        ["Model", "Veloster 2012"],
+        ["Engine", "1.6L Turbo"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "5,000 km"]
+      ],
+      description: "هيوانداي فوليستر ٢٠١٢ اعلي فئه بصمه رشه بره."
+    },
+    kia_picanto: {
+      name: "Kia Picanto",
+      subtitle: "City Car | Automatic | Petrol",
+      price: "EGP380,000",
+      images: [
+        "image_cars/Kia Picanto/Kia Picanto (1).jpg",
+        "image_cars/Kia Picanto/Kia Picanto (2).jpg",
+        "image_cars/Kia Picanto/Kia Picanto (3).jpg",
+        "image_cars/Kia Picanto/Kia Picanto (4).jpg",
+        "image_cars/Kia Picanto/Kia Picanto (5).jpg"
+      ],
+      specs: [
+        ["Brand", "Kia"],
+        ["Model", "Picanto 2009"],
+        ["Engine", "1.0L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "0 km"]
+      ],
+      description: "كيا بيكانتو ٢٠٠٩ فبريكا اتوماتيك."
+    },
+    lancer_puma: {
+      name: "Lancer Puma",
+      subtitle: "Sedan | Automatic | Petrol",
+      price: "EGP495,000",
+      images: [
+        "image_cars/Lancer Puma/Lancer Puma (1).jpg",
+        "image_cars/Lancer Puma/Lancer Puma (2).jpg",
+        "image_cars/Lancer Puma/Lancer Puma (3).jpg",
+        "image_cars/Lancer Puma/Lancer Puma (4).jpg",
+        "image_cars/Lancer Puma/Lancer Puma (5).jpg",
+        "image_cars/Lancer Puma/Lancer Puma (6).jpg"
+      ],
+      specs: [
+        ["Brand", "Mitsubishi"],
+        ["Model", "Lancer Puma 2009"],
+        ["Engine", "1.8L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "10,000 km"]
+      ],
+      description: "لانسر بومه ٢٠٠٩ فبريكا كلها سوبر اكشن."
+    },
+    renault_captur: {
+      name: "Renault Captur",
+      subtitle: "Compact SUV | Automatic | Petrol",
+      price: "EGP550,000",
+      images: [
+        "image_cars/Renault Captur/Renault Captur (1).jpg",
+        "image_cars/Renault Captur/Renault Captur (2).jpg",
+        "image_cars/Renault Captur/Renault Captur (3).jpg",
+        "image_cars/Renault Captur/Renault Captur (4).jpg",
+        "image_cars/Renault Captur/Renault Captur (5).jpg"
+      ],
+      specs: [
+        ["Brand", "Renault"],
+        ["Model", "Captur 2017"],
+        ["Engine", "1.3L Turbo"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "5,000 km"]
+      ],
+      description: "رينو كابتشر ٢٠١٧ اعلي فئه فبريك."
+    },
+    skoda_kodiaq: {
+      name: "Skoda Kodiaq",
+      subtitle: "Family SUV | Automatic | Turbo",
+      price: "EGP1,750,000",
+      images: [
+        "image_cars/skoda/Skoda Kodiak 2024.jpeg",
+        "image_cars/skoda/skoda kodiak .jpg",
+        "image_cars/skoda/skoda kodiak 2.jpg"
+      ],
+      specs: [
+        ["Brand", "Skoda"],
+        ["Model", "Kodiaq 2020"],
+        ["Engine", "1.4L Turbo"],
+        ["Transmission", "Automatic DSG"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "20,000 km"]
+      ],
+      description: "سكودا كودياك 2020 هاي لاين حالة ممتازة، صيانة منتظمة، رشة حزام فقط."
+    },
+    Nissan_Sentra: {
+      name: "Nissan Sentra",
+      subtitle: "Reliable Sedan | Automatic | Petrol",
+      price: "EGP400,000",
+      images: [
+        "image_cars/nissan/WhatsApp Image 2025-11-22 at 19.15.00_909ddc7b.jpg",
+        "image_cars/nissan/WhatsApp Image 2025-11-22 at 19.15.00_93861162.jpg"
+      ],
+      specs: [
+        ["Brand", "Nissan"],
+        ["Model", "Sentra 2017"],
+        ["Engine", "1.6L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "15,000 km"]
+      ],
+      description: "Nissan Sentra 2025 | عداد 17,000 KM | فابريكا بالكامل | صيانة توكيل | المعاينة 6 أكتوبر."
+    },
+    Nissan_Suny: {
+      name: "Nissan Suny",
+      subtitle: "Reliable Sedan | Automatic | Petrol",
+      price: "EGP455,000",
+      images: [
+        "image_cars/nissan/nisan suny2018.jpg",
+        "image_cars/nissan/nisaan suny 2018.jpg"
+      ],
+      specs: [
+        ["Brand", "Nissan"],
+        ["Model", "Suny 2020"],
+        ["Engine", "1.6L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "10,000 km"]
+      ],
+      description: "نيسان صنيي ٢٠١٨ رشه بره عدا السقف تاني فئه."
+    },
+    Nissan_Tida: {
+      name: "Nissan Tida",
+      subtitle: "Reliable Sedan | Automatic | Petrol",
+      price: "EGP480,000",
+      images: [
+        "image_cars/nissan/nissan tida 2009.jpg",
+        "image_cars/nissan/nissan tida 2009 (2).jpg"
+      ],
+      specs: [
+        ["Brand", "Nissan"],
+        ["Model", "Tida 2009"],
+        ["Engine", "1.6L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "12,000 km"]
+      ],
+      description: "حالة وتعديلات وصيانات شاملة وكماليات أصلية | الحالة العامة ومواصفات المحرك والأت جر | [hidden information] KM فابريكا بالكامل | 4 سلندر 1600 - 118 حصان | فتيس أوتوماتيك اعتيادي 4 سرعات | أنظمة الأمان والفرامل: ABS - EBD - BA - 2 Airbags."
+    },
+    Nissan_Sentra2: {
+      name: "Nissan Sentra",
+      subtitle: "Reliable Sedan | Automatic | Petrol",
+      price: "EGP490,000",
+      images: [
+        "image_cars/nissan/nisan sentra 2017.jpg",
+        "image_cars/nissan/nisan sentra 2017 (2).jpg"
+      ],
+      specs: [
+        ["Brand", "Nissan"],
+        ["Model", "Sentra 2017"],
+        ["Engine", "1.6L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "14,000 km"]
+      ],
+      description: "Nissan Sentra 2023 Premium SV | موديل 2023 | ماشيه 72,000 KM | معمول لها فرش جلد | العربية مازالت في الضمان | جميع الصيانات داخل التوكيل | الكاوتش تم تبديله من 3 أشهر | البطارية تم تغييرها من 6 أشهر | الرخصة تنتهي نهاية 2026 | المكان في مدينة المستقبل."
+    },
+    Nissan_Qashqai: {
+      name: "Nissan Qashqai",
+      subtitle: "Reliable SUV | Automatic | Petrol",
+      price: "EGP900,000",
+      images: [
+        "image_cars/nissan/nissan qashqai 2019.jpg",
+        "image_cars/nissan/nissan qashqai 2019 (2).jpg"
+      ],
+      specs: [
+        ["Brand", "Nissan"],
+        ["Model", "Qashqai 2019"],
+        ["Engine", "1.6L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "18,000 km"]
+      ],
+      description: "نيسان قشقاي سبورت | موديل 2019 | عداد 63,000 KM | صيانات توكيل ل 60,000 KM | فابريكة بالكامل بدون أي ملاحظة."
+    },
+    Nissan_Juke: {
+      name: "Nissan Juke",
+      subtitle: "Reliable Crossover | Automatic | Petrol",
+      price: "EGP800,000",
+      images: [
+        "image_cars/nissan/nissan juke 2018.jpg",
+        "image_cars/nissan/nissan juke 2018 (2).jpg"
+      ],
+      specs: [
+        ["Brand", "Nissan"],
+        ["Model", "Juke 2018"],
+        ["Engine", "1.6L"],
+        ["Transmission", "Automatic"],
+        ["Fuel Type", "Petrol"],
+        ["Mileage", "16,000 km"]
+      ],
+      description: "نيسان جوك 2015 | أعلى فئة | فابريكا سقف وودواخل | مثبت سرعة - مرايات ضم - ABS - بصمة دخول وتشغيل بدون مفتاح | بطارية جديدة | تيل فرامل جديد وطنابير خلفية جديدة | عداد 250,000 | دورة صيانة حديثة | رخصة لاخر السنة مرور كفر الشيخ وفحص 2027."
+    }
+  };
+
+  // === Load Car Details based on ID from URL ===
+  const params = new URLSearchParams(window.location.search);
+  const carId = params.get("id");
+  const car = cars[carId];
+
+  if(car) {
+    // Update main info
+    document.getElementById("carName").textContent = car.name;
+    document.getElementById("carSubtitle").textContent = car.subtitle;
+    document.getElementById("carPrice").textContent = "Price: " + car.price;
+
+    // Update description
+    const descElement = document.getElementById("carDescription");
+    descElement.textContent = car.description || "No description available.";
+
+    // Load images into carousel
+    const imgContainer = document.getElementById("carImages");
+    car.images.forEach((src, i) => {
+      const div = document.createElement("div");
+      div.className = `carousel-item ${i===0 ? "active" : ""}`;
+      div.innerHTML = `<img src="${src}" class="d-block w-100" alt="${car.name}">`;
+      imgContainer.appendChild(div);
+    });
+
+    // Load specs
+    const specList = document.getElementById("carSpecs");
+    car.specs.forEach(([key, val]) => {
+      const li = document.createElement("li");
+      li.className = "list-group-item";
+      li.innerHTML = `<strong>${key}:</strong> ${val}`;
+      specList.appendChild(li);
+    });
+
+  } else {
+    document.querySelector(".container").innerHTML = "<h3 class='text-center text-danger'>Car not found!</h3>";
+  }
+
+  // === Copy Phone Number ===
+  function copyPhone() {
+    navigator.clipboard.writeText("01012345678");
+    alert("✅ تم نسخ رقم الهاتف!");
+  }
+
+  // === Toggle Specs / Description ===
+const btnSpecs = document.getElementById("btnSpecs");
+const btnDesc = document.getElementById("btnDesc");
+const specsContent = document.getElementById("specsContent");
+const descContent = document.getElementById("descContent");
+
+// الحالة الافتراضية
+btnSpecs.classList.add("active");
+specsContent.style.display = "block";
+descContent.style.display = "none";
+
+btnSpecs.addEventListener("click", () => {
+  btnSpecs.classList.add("active");
+  btnDesc.classList.remove("active");
+  specsContent.style.display = "block";
+  descContent.style.display = "none";
+});
+
+btnDesc.addEventListener("click", () => {
+  btnDesc.classList.add("active");
+  btnSpecs.classList.remove("active");
+  specsContent.style.display = "none";
+  descContent.style.display = "block";
+});
+
+</script>
+
+<script>
+  const newsletterForm = document.querySelector('.newsletter-form');
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // يمنع إعادة تحميل الصفحة
+    const email = newsletterForm.querySelector('input').value;
+    if(email) {
+      alert(`Thank you for subscribing! Your email: ${email}`);
+      newsletterForm.reset(); // يمسح الحقل بعد الاشتراك
+    } else {
+      alert('Please enter a valid email.');
+    }
+  });
+</script>
+<!-- ===== Scripts ===== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

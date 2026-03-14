@@ -1,0 +1,618 @@
+/* ===== General Reset ===== */
+body {
+  background-color: #ffffff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #2b2e35;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Navbar Custom Style ===== */
+.navbar {
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.navbar .nav-link {
+  margin-left: 10px;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: #dc3545 !important; 
+}
+
+.navbar-brand {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none ;
+}
+/* navbar end */
+
+/*  Hero Section start   */
+.hero {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://demo.wpautolistings.com/wp-content/uploads/2018/07/slider-min.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+.hero p {
+  font-size: 17px;
+  text-shadow: 3px 4px 6 px rgba(0,0,0,0.4);
+}
+/* hero end */
+
+/* ===== Filter Section start ===== */
+.filter-section {
+  background-color: white;
+  padding: 40px;
+  margin-top: -60px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.filter-section h3 {
+  font-weight: bold;
+  color: #1c1c1c;
+}
+.form-select{
+    box-shadow: 0px 3px 6px rgba(128, 128, 128, 0.458);
+    cursor: pointer;
+}
+/* ===== Filter Section end ===== */
+
+/* ===== Sidebar start ===== */
+.sidebar {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.sidebar h5 {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1c1c1c;
+}
+
+.sidebar select {
+  cursor: pointer;
+  box-shadow: 0px 5px 3px rgba(128, 128, 128, 0.258);
+}
+
+.sidebar button {
+  margin-top: 10px;
+}
+/* ===== Sidebar end ===== */
+
+/* ===== Car Cards start ===== */
+.car-card img {
+  border-radius: 10px 10px 0 0;
+  transition: 0.3s;
+  box-shadow: 0px 7px 8px rgba(128, 128, 128, 0.464);
+  transition: transform 0.3s ease;
+}
+
+.car-card .card-body {
+  text-align: center;
+  background-color: #ffffff5e;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 7px 8px rgba(128, 128, 128, 0.54);
+  cursor: pointer;
+}
+.top-card .car-card {
+  margin-top: 20px;
+  min-height: 50px; 
+}
+
+.top-card .car-card img {
+  height: 250px;
+  object-fit: cover;
+}
+
+/* ===== Hover Effect on Full Card ===== */
+.car-card {
+  position: relative;
+  top: 0;
+  transition: top 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(210, 8, 169, 0.462);
+  top: -12px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px; /* طول واحد للصور */
+  object-fit: cover; 
+}
+
+/* Animation for cards on scroll */
+.car-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.car-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* ===== Button Animation on Hover ===== */
+.car-card:hover .btn {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+/*  ===== Car Cards end ===== */
+
+
+/* ===== View More Button start ===== */
+button.btn-danger {
+  transition: 0.3s;
+}
+
+button.btn-danger:hover {
+  background-color: #c82333;
+}
+/* ===== View More Button end ===== */
+
+/* footer start */
+.footer {
+  background: url(offer-background.jpg) no-repeat fixed;
+  color: #fff;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  padding-bottom: 10px  ;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 2px solid #e63946;
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+.footer-section p {
+  line-height: 1.6;
+}
+
+.footer-logo {
+  width: 140px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #e63946;
+}
+
+.social-icons {
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #e63946;
+}
+
+.newsletter-form input {
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+  width: 65%;
+  margin-bottom: 10px;
+}
+
+.newsletter-form button {
+  padding: 8px 12px;
+  background-color: #e63946;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #d62828;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  color: white;
+}
+
+.footer-bottom a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+  color: #e63946;
+}
+hr {
+  border: none;
+  border-top: 2px solid black;
+  margin: 20px 0;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-section {
+    min-width: 100%;
+  }
+}
+/* footer end */
+
+/* القسم */
+.car-section {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* الصورة */
+.car-image {
+  flex: 1;
+  text-align: right;
+}
+
+.car-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* المحتوى */
+.car-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* العنوان */
+.car-list h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 5px;
+}
+
+.car-list p {
+  color: #8c8f94;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  gap: 25px;
+}
+
+/* الماركات */
+.car-brands {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 50px;
+  margin-bottom: 30px;
+}
+
+.car-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 5px ;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: color 0.3 ease, transform 0.3s ease;
+  text-decoration: none;
+  color: #010205;
+}
+
+.car-item::before {
+  content: "▶";
+  color: #b4b6bb5b;
+  font-size: 0.8rem;
+  margin-right: 8px;
+}
+.car-item:hover{
+  color: #ca0505;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.btn-outline-danger-rounded-5-px-4{
+    display: block;
+    background-color:#ca0505;
+    color: rgb(253, 252, 252);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-outline-danger-rounded-5-px-4:hover {
+    background-color:#c82333;
+}
+
+.btn-outline-danger-rounded-5-px-4 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* زر الرجوع للأعلى */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 147px;
+  right: 30px;
+  background-color: #e21f1f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;       
+  height: 50px;        
+  font-size: 24px;    
+  font-weight: bold;   
+  cursor: pointer;
+  box-shadow: 0 0 15px #990909; 
+  transition: all 0.3s ease;
+  display: none;
+  line-height: 50px;   
+  text-align: center;  
+}
+
+#scrollTopBtn:hover {
+  background-color: #fb0606;
+  transform: scale(1.1);
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 8px #cb0404;
+  }
+  50% {
+    box-shadow: 0 0 20px #e21f1f;
+  }
+  100% {
+    box-shadow: 0 0 8px #e21f1f;
+  }
+}
+
+/* about section */
+.about-modern h2 {
+  font-size: 2.4rem;
+}
+
+.about-modern .about-image img {
+  transition: 0.4s;
+}
+
+.about-modern .about-image img:hover {
+  transform: scale(1.03);
+}
+
+.about-modern i {
+  transition: .3s;
+}
+
+.about-modern .col-6:hover i {
+  transform: translateY(-5px);
+}
+
+.team-card {
+  transition: .3s;
+  background: white;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(238, 7, 7, 0.12);
+}
+
+.dev-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 4px solid #dc3545;
+}
+
+/* WhatsApp Button */
+#whatsappBtn {
+  position: fixed;
+  bottom: 20px; 
+  right: 29px;
+  background-color: #25d366;
+  color: white;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  z-index: 999;
+  box-shadow: 0 0 15px #25d366; 
+  animation: glow 1.5s infinite ease-in-out;
+  text-decoration: none;
+  transition: 0.3s;
+}
+#whatsappBtn:hover {
+  background-color: #1ebe5b;
+  transform: scale(1.1);
+}
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 8px #25d366;
+    }
+    50% {
+      box-shadow: 0 0 20px #25d366;
+    }
+    100% {
+      box-shadow: 0 0 8px #25d366;
+    }
+  }
+
+/* ===== Dark Mode Floating Button ===== */
+.dark-toggle {
+  position: fixed;
+  right: 29px;
+  bottom: 85px;
+  width: 52px;
+  height: 52px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: none;
+  background: #212529;  
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 9999;
+}
+
+/* Hover */
+.dark-toggle:hover {
+  background: #000000;
+}
+
+/* Rotation Right */
+.dark-toggle.rotate-right {
+  animation: rotateRight 0.6s ease forwards;
+}
+
+/* Rotate Left */
+.dark-toggle.rotate-left {
+  animation: rotateLeft 0.6s ease forwards;
+}
+
+/* Bounce */
+.dark-toggle.bounce {
+  animation: bounce 0.4s ease;
+}
+
+/* Glow in Dark Mode */
+body.dark-mode .dark-toggle {
+  box-shadow:
+    0 0 10px rgba(220,53,69,0.7),
+    0 0 25px rgba(220,53,69,0.6),
+    0 0 40px rgba(220,53,69,0.4);
+}
+
+/* ===== Animations ===== */
+@keyframes rotateRight {
+  0%   { transform: rotate(0deg) scale(1); }
+  60%  { transform: rotate(300deg) scale(1.15); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes rotateLeft {
+  0%   { transform: rotate(0deg) scale(1); }
+  60%  { transform: rotate(-300deg) scale(1.15); }
+  100% { transform: rotate(-360deg) scale(1); }
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+
+/* ===== Dark Mode Base ===== */
+body.dark-mode {
+  background-color: #121212;
+  color: #eaeaea;
+}
+/* Filter Section */
+body.dark-mode .filter-section {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+body.dark-mode .filter-section h3 {
+  color: #ffffff;
+}
+/* Cards */
+body.dark-mode .card {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+  background-color: #1c1c1c !important;
+}
+
+/* Footer */
+body.dark-mode footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+}
+body.dark-mode .sidebar {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+body.dark-mode .car-item {
+  color: #e0e0e0;
+}

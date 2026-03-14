@@ -1,0 +1,139 @@
+  body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+  .hero {
+  min-height: calc(100vh - 80px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+/* ===== Navbar Custom Style ===== */
+.navbar {
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.navbar .nav-link {
+  margin-left: 10px;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: #dc3545 !important; 
+}
+
+.navbar-brand {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none ;
+}
+
+  /* الفورم */
+  .card {
+    background: rgba(255,255,255,0.85); 
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    max-width: 600px;
+    width: 50%;
+    overflow: hidden;
+  }
+
+  .form-header {
+    display: flex;
+    justify-content: center;
+    background: #f5f5f5;
+  }
+
+  .form-header button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 15px 30px;
+    color: gray;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+  }
+
+  .form-header button.active {
+    color: #dc3545;
+    border-color: #dc3545;
+    font-weight: bold;
+  }
+
+  .forms {
+    position: relative;
+    height: auto;
+  }
+
+  form {
+    position: absolute;
+    width: 100%;
+    top:0;
+    left:0;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease;
+  }
+
+  form.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index:1;
+    position: relative;
+  }
+
+  input.form-control {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+
+  button.btn-primary {
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #dc3545, #000000cd);
+    border: none;
+    transition: 0.3s;
+  }
+
+  button.btn-primary:hover {
+    background: linear-gradient(45deg, #dc3545);
+  }
+
+  p.text-center a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+
+  p.text-center a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+  .card {
+    width: 95%;
+    border-radius: 12px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  .form-header button {
+    padding: 10px 12px;
+    font-size: 1em;
+  }
+}

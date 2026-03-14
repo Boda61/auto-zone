@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUTO ZONE - Contact Us</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./image_cars/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./image_cars/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./image_cars/favicon-16x16.png">
+    <link rel="manifest" href="./image_cars/site.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-popup.css">
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+<header>
+  <!-- تنبيه أعلى الصفحة -->
+  <div class="alert alert-danger text-center m-0 fw-bold">
+    !!!الموقع غير مسؤل عن اي عربيات غير موثوق بها
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <!-- اللوجو -->
+      <a class="navbar-brand fw-bold" href="index.html">AUTO ZONE</a>
+
+      <!-- زر المنيو في الشاشات الصغيرة -->
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- روابط النافبار -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active fw-semibold" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger" href="content.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="add.html">Add Ad</a>
+          </li>
+
+          <li class="nav-item ms-lg-3">
+            <button onclick="window.location.href='signup.html'" class="btn btn-outline-danger rounded-5 px-4">
+              Sign Up
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero text-center " style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://demo.wpautolistings.com/wp-content/uploads/2018/07/slider-min.jpg') center/cover no-repeat;">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Fill the form below to get in touch.</p>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">  
+        <div class="card shadow-sm p-4">
+          <h3 class="mb-4 text-center">Get in Touch</h3>
+
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="@gmail.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Write your message..." required></textarea>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-danger px-5 py-2">Send Message</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/201128420011" target="_blank" id="whatsappBtn">
+  <i class="bi bi-whatsapp"></i>
+</a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- About -->
+    <div class="footer-section">
+      <h3>About AUTO ZONE</h3>
+      <p>A trusted platform for buying and selling used cars easily and safely.</p>
+      <img src="./image_cars/logo.png" alt="AUTO ZONE Logo" class="footer-logo">
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="add.html">Add Ad</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-section">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Warranty Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Social & Newsletter -->
+    <div class="footer-section">
+      <h3>Follow & Subscribe</h3>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+<hr>
+  <div class="footer-bottom">
+    <p>© 2025 AUTO ZONE. All Rights Reserved. | <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUxYk25rvBPCIW5I16mkXiZbrNSPNw18FvOlU_GOjqC6aX0g/viewform?usp=header">Feedback</a></p>
+  </div>
+</footer>
+
+<!--  poop up بتاعت السيند ماسدج-->
+<script>
+  (function(){
+    emailjs.init("WgU3_8BkDiOxHDS0A");
+  })();
+
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.send("service_mlz6koy", "template_kpysbia", {
+      from_name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value
+    })
+    .then(function() {
+      showPopup("✅ تم إرسال رسالتك بنجاح! شكراً لتواصلك معنا.", "success");
+      form.reset();
+    }, function(error) {
+      showPopup("❌ حصل خطأ أثناء الإرسال. حاول تاني بعد شوية.", "error");
+      console.log(error);
+    });
+  });
+
+  //  دالة الـ Popup
+  function showPopup(message, type) {
+    const popup = document.createElement("div");
+    popup.textContent = message;
+    popup.className = `popup-message ${type}`;
+    document.body.appendChild(popup);
+
+    // يظهر بسلاسة
+    setTimeout(() => popup.classList.add("show"), 50);
+
+    // يتشال بعد 3 ثواني
+    setTimeout(() => {
+      popup.classList.remove("show");
+      setTimeout(() => popup.remove(), 300);
+    }, 3000);
+  }
+</script>
+
+<script>
+  const newsletterForm = document.querySelector('.newsletter-form');
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // يمنع إعادة تحميل الصفحة
+    const email = newsletterForm.querySelector('input').value;
+    if(email) {
+      alert(`Thank you for subscribing! Your email: ${email}`);
+      newsletterForm.reset(); // يمسح الحقل بعد الاشتراك
+    } else {
+      alert('Please enter a valid email.');
+    }
+  });
+</script>
+</body>
+</html>

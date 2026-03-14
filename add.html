@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUTO ZONE - Add Ad</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./image_cars/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./image_cars/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./image_cars/favicon-16x16.png">
+    <link rel="manifest" href="./image_cars/site.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+<header>
+  <!-- تنبيه أعلى الصفحة -->
+  <div class="alert alert-danger text-center m-0 fw-bold">
+    !!!الموقع غير مسؤل عن اي عربيات غير موثوق بها
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <!-- اللوجو -->
+      <a class="navbar-brand fw-bold" href="index.html">AUTO ZONE</a>
+
+      <!-- زر المنيو في الشاشات الصغيرة -->
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- روابط النافبار -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active fw-semibold" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="content.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger" href="add.html">Add Ad</a>
+          </li>
+
+          <li class="nav-item ms-lg-3">
+            <button onclick="window.location.href='signup.html'" class="btn btn-outline-danger rounded-5 px-4">
+              Sign Up
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <!-- ===== Hero Section  ===== -->
+  <section class="hero">
+    <h1>Add Your Car Advertisement</h1>
+    <p>Enter your car details below to publish your ad for free</p>
+  </section>
+
+  <!-- ===== Add Ad Form ===== -->
+  <section class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card p-4 shadow-lg border-0">
+          <h3 class="text-center mb-4 text-dark">Car Information</h3>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Car Title</label>
+              <input type="text" class="form-control" placeholder="e.g. Toyota Corolla 2023">
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Brand</label>
+                <select class="form-select">
+                  <option selected>Select Brand</option>
+                  <option>Toyota</option>
+                  <option>BMW</option>
+                  <option>Kia</option>
+                  <option>Hyundai</option>
+                  <option>Mercedes</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Condition</label>
+                <select class="form-select">
+                  <option selected>Select Condition</option>
+                  <option>New</option>
+                  <option>Used</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Price ($)</label>
+              <input type="number" class="form-control" placeholder="Enter car price">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Description</label>
+              <textarea class="form-control" rows="3" placeholder="Write some details about your car..."></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Upload Car Image</label>
+              <input type="file" class="form-control">
+            </div>
+
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-danger px-5">Submit Ad</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== Popup Modal ===== -->
+<div class="modal fade" id="submitPopup" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-3">
+      <h4 class="mb-3 text-success">✔ تمت العملية بنجاح</h4>
+      <p class="mb-2">سيتم الاطلاع على البيانات والرد عليكم</p>
+      <button class="btn btn-danger" data-bs-dismiss="modal">حسناً</button>
+    </div>
+  </div>
+</div>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/201128420011" target="_blank" id="whatsappBtn">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+    <!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- About -->
+    <div class="footer-section">
+      <h3>About AUTO ZONE</h3>
+      <p>A trusted platform for buying and selling used cars easily and safely.</p>
+      <img src="./image_cars/logo.png" alt="AUTO ZONE Logo" class="footer-logo">
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="add.html">Add Ad</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-section">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Warranty Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Social & Newsletter -->
+    <div class="footer-section">
+      <h3>Follow & Subscribe</h3>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+<hr>
+  <div class="footer-bottom">
+    <p>© 2025 AUTO ZONE. All Rights Reserved. | <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUxYk25rvBPCIW5I16mkXiZbrNSPNw18FvOlU_GOjqC6aX0g/viewform?usp=header">Feedback</a></p>
+  </div>
+</footer>
+<script>
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // عشان ميعملش Reload
+
+    // افتح مودال البوب أب
+    const modal = new bootstrap.Modal(document.getElementById("submitPopup"));
+    modal.show();
+
+    // امسح البيانات بعد الفتح
+    form.reset();
+  });
+</script>
+
+
+<script>
+  const newsletterForm = document.querySelector('.newsletter-form');
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // يمنع إعادة تحميل الصفحة
+    const email = newsletterForm.querySelector('input').value;
+    if(email) {
+      alert(`Thank you for subscribing! Your email: ${email}`);
+      newsletterForm.reset(); // يمسح الحقل بعد الاشتراك
+    } else {
+      alert('Please enter a valid email.');
+    }
+  });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+    body {
+       background-color: #f8f9fa; 
+       font-family: 'Poppins', sans-serif;
+      }
+    .car-header {
+      background: url(page-foter.png) no-repeat center center;
+      color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+    .carousel-inner img {
+      height: 580px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .details-box {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .price-tag {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #dc3545;
+    }
+    .btn-danger {
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-weight: 500;
+    }
+
+    .btn-outline-secondary {
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-weight: 500;
+    }
+
+    .description {
+      margin-top: 30px;
+      line-height: 1.7;
+    }
+/* ===== Toggle Tabs ===== */
+.toggle-tabs {
+  display: flex;
+  background: #f1f1f1;
+  border-radius: 14px;
+  padding: 6px;
+  gap: 6px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn i {
+  margin-right: 6px;
+}
+
+.tab-btn:hover {
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+.tab-btn.active {
+  background: #dc3545;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(220, 53, 69, 0.35);
+}

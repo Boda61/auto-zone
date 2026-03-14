@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUTO ZONE - HOME</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./image_cars/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./image_cars/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./image_cars/favicon-16x16.png">
+    <link rel="manifest" href="./image_cars/site.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <!-- تنبيه أعلى الصفحة -->
+  <div class="alert alert-danger text-center m-0 fw-bold">
+    !!!الموقع غير مسؤل عن اي عربيات غير موثوق بها
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <!-- اللوجو -->
+      <a class="navbar-brand fw-bold" href="index.html">AUTO ZONE</a>
+
+      <!-- زر المنيو في الشاشات الصغيرة -->
+      <button
+        class="navbar-toggler border-0"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- روابط النافبار -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active text-danger fw-semibold" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="content.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="add.html">Add Ad</a>
+          </li>
+
+          <li class="nav-item ms-lg-3">
+            <button onclick="window.location.href='signup.html'" class="btn btn-outline-danger rounded-5 px-4">
+              Sign Up
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" style="  height: 483px;">
+    <h1>Find Your Favorite Car Easily</h1>
+    <p>The best website for buying and selling used cars</p>
+  </section>
+
+<!-- ===== Filter Section ===== -->
+<section class="filter-section container">
+  <h3 class="text-center mb-4">Search for Your Car</h3>
+  <div class="row g-3">
+    <div class="col-md-3">
+      <select class="form-select">
+        <option selected>Condition</option>
+        <option>New</option>
+        <option>Used</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <select class="form-select">
+        <option selected>Brand</option>
+        <option>Toyota</option>
+        <option>BMW</option>
+        <option>Kia</option>
+        <option>Hyundai</option>
+        <option>Lancer</option>
+        <option>Renault</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <select class="form-select">
+        <option selected>Price From</option>
+        <option>100000</option>
+        <option>300000</option>
+        <option>600000</option>
+        <option>900000</option>
+        <option>1000000</option>
+        <option>2000000</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <select class="form-select">
+        <option selected>To</option>
+        <option>200000</option>
+        <option>300000</option>
+        <option>600000</option>
+        <option>700000</option>
+        <option>800000</option>
+        <option>2000000</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-danger w-100">Search Now</button>
+    </div>
+  </div>
+</section>
+<!-- Title Row -->
+<div class="row">
+  <div class="col-12">
+    <h2 class="text-center mb-4" style="padding-top: 40px;">Available Cars</h2>
+  </div>
+</div>
+<!-- ===== Cars Section + Sidebar ===== -->
+<section class="container py-5">
+
+  <!-- الصف الأول: الفلتر + أول 3 كروت -->
+  <div class="row g-4">
+
+    <!-- Sidebar -->
+<aside class="col-md-3">
+  <div class="sidebar">
+    <h5 class="mb-3">Filter Results</h5>
+
+    <div class="mb-3">
+      <label class="form-label">Brand</label>
+      <select id="side-brand" class="form-select">
+        <option value="all">All</option>
+        <option value="toyota">Toyota</option>
+        <option value="bmw">BMW</option>
+        <option value="kia">Kia</option>
+        <option value="hyundai">Hyundai</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Year</label>
+      <select id="side-year" class="form-select">
+        <option value="all">All</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Fuel Type</label>
+      <select id="side-fuel" class="form-select">
+        <option value="all">All</option>
+        <option value="petrol">Petrol</option>
+        <option value="diesel">Diesel</option>
+        <option value="electric">Electric</option>
+      </select>
+    </div>
+
+    <button id="applySidebarFilter" class="btn btn-danger w-100">
+      Apply Filters
+    </button>
+
+  </div>
+</aside>
+
+    <!-- أول 3 كروت جنب الفلتر -->
+    <div class="col-md-9">
+      <div class="row g-4">
+
+<div class="col-md-4 mb-4 top-card">
+  <div class="card car-card h-100"
+       data-brand="toyota"
+       data-year="2022"
+       data-fuel="petrol"
+       data-price="780000"
+       data-condition="used">
+    <a href="details.html?id=toyota">
+      <img src="image_cars/toyota/صور التيوتيا (5).jpg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Toyota Corolla</h5>
+      <p class="card-text">Price: EGP 780,000</p>
+      <a href="details.html?id=toyota" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4 mb-4 top-card">
+  <div class="card car-card h-100"
+       data-brand="kia"
+       data-year="2021"
+       data-fuel="petrol"
+       data-price="490000"
+       data-condition="used">
+    <a href="details.html?id=kia">
+      <img src="image_cars/kia/صور كيا (1).jpg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Kia Cerato</h5>
+      <p class="card-text">Price: EGP 490,000</p>
+      <a href="details.html?id=kia" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4 mb-4 top-card">
+  <div class="card car-card h-100"
+       data-brand="bmw"
+       data-year="2024"
+       data-fuel="petrol"
+       data-price="1350000"
+       data-condition="new">
+    <a href="details.html?id=bmw">
+      <img src="image_cars/BMWx3/BMWx3 (1).jpg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">BMW X3</h5>
+      <p class="card-text">Price: EGP 1,350,000</p>
+      <a href="details.html?id=bmw" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- باقي الكروت (تحت لوحدها — 4 في الصف) -->
+  <div class="row g-4 mt-4">
+
+<div class="col-md-3">
+  <div class="card car-card h-100"
+       data-brand="hyundai"
+       data-year="2020"
+       data-fuel="petrol"
+       data-price="440000"
+       data-condition="used">
+    <a href="details.html?id=hyundai">
+      <img src="image_cars/Hyundai Getz/Hyundai Getz (2).jpg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Hyundai Getz</h5>
+      <p class="card-text">Price: EGP 440,000</p>
+      <a href="details.html?id=hyundai" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card car-card h-100"
+       data-brand="hyundai"
+       data-year="2021"
+       data-fuel="petrol"
+       data-price="550000"
+       data-condition="used">
+    <a href="details.html?id=hyundai_veloster">
+      <img src="image_cars/Hyundai Veloster/Hyundai Veloster (2).jpg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Hyundai Veloster</h5>
+      <p class="card-text">Price: EGP 550,000</p>
+      <a href="details.html?id=hyundai_veloster" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card car-card h-100"
+       data-brand="kia"
+       data-year="2020"
+       data-fuel="petrol"
+       data-price="380000"
+       data-condition="used">
+    <a href="details.html?id=kia_picanto">
+      <img src="image_cars/Kia Picanto/Kia Picanto (5).jpg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Kia Picanto</h5>
+      <p class="card-text">Price: EGP 380,000</p>
+      <a href="details.html?id=kia_picanto" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card car-card h-100"
+       data-brand="mitsubishi"
+       data-year="2019"
+       data-fuel="petrol"
+       data-price="495000"
+       data-condition="used">
+    <a href="details.html?id=lancer_puma">
+      <img src="image_cars/Lancer Puma/Lancer Puma (4).jpg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Lancer Puma</h5>
+      <p class="card-text">Price: EGP 495,000</p>
+      <a href="details.html?id=lancer_puma" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card car-card h-100"
+       data-brand="skoda"
+       data-year="2024"
+       data-fuel="petrol"
+       data-price="1750000"
+       data-condition="new">
+    <a href="details.html?id=skoda_kodiaq">
+      <img src="image_cars/skoda/Skoda Kodiak 2024.jpeg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Skoda Kodiaq</h5>
+      <p class="card-text">Price: EGP 1,750,000</p>
+      <a href="details.html?id=skoda_kodiaq" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card car-card h-100"
+       data-brand="nissan"
+       data-year="2023"
+       data-fuel="petrol"
+       data-price="900000"
+       data-condition="new">
+    <a href="details.html?id=Nissan_Qashqai">
+      <img src="image_cars/nissan/nissan qashqai.jpeg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Nissan Qashqai</h5>
+      <p class="card-text">Price: EGP 900,000</p>
+      <a href="details.html?id=Nissan_Qashqai" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card car-card h-100"
+       data-brand="skoda"
+       data-year="2022"
+       data-fuel="petrol"
+       data-price="700000"
+       data-condition="new">
+    <a href="details.html?id=skoda_rapid">
+      <img src="image_cars/skoda/Skoda Rapid.jpeg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Skoda Rapid</h5>
+      <p class="card-text">Price: EGP 700,000</p>
+      <a href="details.html?id=skoda_rapid" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card car-card h-100"
+       data-brand="renault"
+       data-year="2021"
+       data-fuel="petrol"
+       data-price="550000"
+       data-condition="used">
+    <a href="details.html?id=renault_captur">
+      <img src="image_cars/Renault Captur/Renault Captur (3).jpg" class="card-img-top">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title">Renault Captur</h5>
+      <p class="card-text">Price: EGP 550,000</p>
+      <a href="details.html?id=renault_captur" class="btn btn-outline-danger w-100">View Details</a>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+</section>
+
+
+  <!-- View More Button -->
+  <div style="text-align: center ; margin-top: 30px ;">
+    <button onclick="window.location.href='morecars.html'" class="btn btn-danger px-5 py-2">
+        View More
+    </button>
+</div>
+</div>
+
+
+  </section>
+  <div class="car-section" style="display: flex; align-items: center; justify-content: space-between;">
+  <div class="car-content" style="flex: 1;">
+    <div class="car-list">
+      <h2>Browse Cars By Make</h2>
+      <p>Cars available in different categories</p>
+
+
+      <!-- العربيات في صفين -->
+      <div style="display: flex; flex-wrap: wrap; gap: 15px; max-width: 380px;">
+
+    <a href="nissan.html" class="car-item">Nissan</a>
+
+    <a href="hyundai.html" class="car-item">Hyundai</a>
+
+    <a href="skoda.html" class="car-item">Skoda</a>
+
+    <a href="kia.html" class="car-item">Kia</a>
+
+    <a href="toyota.html" class="car-item">Toyota</a>
+
+    <a href="mitsubishi.html" class="car-item">Mitsubishi</a>
+
+    <a href="honda.html" class="car-item">Honda</a>
+
+</div>
+      <button class="btn-outline-danger-rounded-5-px-4"
+      onclick="window.location.href= 'cars.html'">SEE ALL CARS</button>
+    </div>
+  </div>
+
+  <div class="car-image" style="flex: 1; text-align: right;">
+    <img src="all-cars.png" alt="Car Image" style="width: 400px; max-width: 100%;">
+  </div>
+</div>
+  <!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 16 16">
+    <path d="M8 3.293l4.646 4.647-.707.707L8 4.707l-3.939 3.94-.707-.707L8 3.293z"/>
+  </svg>
+</button>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/201128420011" target="_blank" id="whatsappBtn">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+  <!-- Dark Mode Button -->
+<button id="darkModeToggle" class="dark-toggle">
+  🌙
+</button>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- About -->
+    <div class="footer-section">
+      <h3>About AUTO ZONE</h3>
+      <p>A trusted platform for buying and selling used cars easily and safely.</p>
+      <img src="./image_cars/logo.png" alt="AUTO ZONE Logo" class="footer-logo">
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="add.html">Add Ad</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-section">
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Warranty Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Social & Newsletter -->
+    <div class="footer-section">
+      <h3>Follow & Subscribe</h3>
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-whatsapp"></i></a>
+      </div>
+<form class="newsletter-form" action="newsletter.php" method="POST">
+  <input type="email" name="email" placeholder="Enter your email" required>
+  <button type="submit">Subscribe</button>
+</form>
+    </div>
+    </div>
+  </div>
+  <hr>
+  <div class="footer-bottom">
+    <p>© 2025 AUTO ZONE. All Rights Reserved. | <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUxYk25rvBPCIW5I16mkXiZbrNSPNw18FvOlU_GOjqC6aX0g/viewform?usp=header">Feedback</a></p>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const searchBtn = document.querySelector('.filter-section button');
+  const carCards = document.querySelectorAll('.car-card');
+
+  searchBtn.addEventListener('click', function() {
+    const selects = document.querySelectorAll('.filter-section select');
+    const condition = selects[0].value; // New / Used
+    const brand = selects[1].value;     // Brand
+    const priceFrom = parseInt(selects[2].value.replace(/[^0-9]/g, "")) || 0;
+    const priceTo = parseInt(selects[3].value.replace(/[^0-9]/g, "")) || Infinity;
+
+    carCards.forEach(card => {
+      const carCondition = card.dataset.condition ? card.dataset.condition.toLowerCase() : "used";
+      const titleText = card.querySelector('.card-title').innerText.toLowerCase();
+
+      // ناخد السعر ونعملو فلتره للمقارنة فقط
+      const priceText = card.querySelector('.card-text').innerText;
+      const carPrice = parseInt(priceText.replace(/[^0-9]/g, "")) || 0;
+
+      // الفلترة
+      const matchCondition = (condition === "Condition" || carCondition === condition.toLowerCase());
+      const matchBrand = (brand === "Brand" || titleText.includes(brand.toLowerCase()));
+      const matchPrice = (carPrice >= priceFrom && carPrice <= priceTo);
+
+      // عرض أو إخفاء الكارت حسب النتيجة
+      if (matchCondition && matchBrand && matchPrice) {
+        card.parentElement.style.display = "block";
+      } else {
+        card.parentElement.style.display = "none";
+      }
+    });
+  });
+});
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// نراقب السحب (scroll)
+window.onscroll = function() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollTopBtn.style.display = "block"; // يظهر الزرار
+  } else {
+    scrollTopBtn.style.display = "none";  // يختفي الزرار
+  }
+};
+
+// لما نضغط على الزرار
+scrollTopBtn.onclick = function() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
+</script>
+
+<script>
+  const newsletterForm = document.querySelector('.newsletter-form');
+  newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // يمنع إعادة تحميل الصفحة
+    const email = newsletterForm.querySelector('input').value;
+    if(email) {
+      alert(`Thank you for subscribing! Your email: ${email}`);
+      newsletterForm.reset(); // يمسح الحقل بعد الاشتراك
+    } else {
+      alert('Please enter a valid email.');
+    }
+  });
+</script>
+<script>
+  /* =====================
+      انيميشن ظهور الكروت
+  ===================== */
+  const cards = document.querySelectorAll(".car-card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+
+  /* =====================
+     Sidebar Filter
+  ===================== */
+document.addEventListener("DOMContentLoaded", () => {
+
+  const applyBtn = document.getElementById("applySidebarFilter");
+  const carCards = document.querySelectorAll(".car-card");
+
+  applyBtn.addEventListener("click", () => {
+
+    const brand = document.getElementById("side-brand").value;
+    const year  = document.getElementById("side-year").value;
+    const fuel  = document.getElementById("side-fuel").value;
+
+    carCards.forEach(card => {
+
+      const matchBrand = brand === "all" || card.dataset.brand === brand;
+      const matchYear  = year === "all"  || card.dataset.year === year;
+      const matchFuel  = fuel === "all"  || card.dataset.fuel === fuel;
+
+      card.parentElement.style.display =
+        (matchBrand && matchYear && matchFuel) ? "block" : "none";
+
+    });
+
+  });
+
+});
+</script>
+
+
+<!-- dark mood -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("darkModeToggle");
+  if (!btn) return;
+
+  // Load saved mode
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+    btn.textContent = "☀️";
+  }
+
+  btn.addEventListener("click", () => {
+
+    const isDark = document.body.classList.contains("dark-mode");
+
+    // Reset animation
+    btn.classList.remove("rotate-right", "rotate-left");
+
+    // Force reflow (important)
+    void btn.offsetWidth;
+
+    // Apply rotation
+    btn.classList.add(isDark ? "rotate-left" : "rotate-right");
+
+    // Toggle mode
+    document.body.classList.toggle("dark-mode");
+
+    if (!isDark) {
+      localStorage.setItem("darkMode", "enabled");
+      btn.textContent = "☀️";
+    } else {
+      localStorage.setItem("darkMode", "disabled");
+      btn.textContent = "🌙";
+    }
+  });
+});
+</script>
+</body>
+</html>
